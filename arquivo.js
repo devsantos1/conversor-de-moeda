@@ -61,7 +61,7 @@ function values() {
     if(coinselect.value == 'euro'){
         namecurrency.textContent = 'euro'
         imgcurrency.src = './assets/euro.png'
-        convertedvalue.textContent =   new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(inputvalue/ euro)
+       
 
 
     }
@@ -69,7 +69,7 @@ function values() {
     if(coinselect.value == 'btc'){
         namecurrency.textContent = 'bitcoin'
         imgcurrency.src = './assets/btc.png'
-        convertedvalue.textContent =   new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'BTC' }).format(inputvalue/ btc)
+       
         
 
     }
@@ -77,10 +77,12 @@ function values() {
     if(coinselect.value == 'dolar'){
         namecurrency.textContent = 'dolar americano'
         imgcurrency.src = './assets/dolar.png'
-        convertedvalue.textContent =   new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(inputvalue/ dolarday)
+      
         
 
     }
+
+    values()
 
 
 
