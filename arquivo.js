@@ -7,14 +7,16 @@ const coinselect = document.querySelector('.select-coin')
 
   async function values() {
 
-    const inputvalue = document.querySelector(".input-value").value
-
-    
     const data = await fetch('https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL').then( response => response.json())
 
    const dolarday = data.USDBRL.high
    const euro = data.EURBRL.high
    const btc = data.BTCBRL.high
+
+    const inputvalue = document.querySelector(".input-value").value
+
+    
+    
  
 
     const value = inputvalue / dolarday
