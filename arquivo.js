@@ -1,21 +1,11 @@
 const convertbutton =  document.querySelector('.convert-button')
-const dolarday = 5.12
-const btc = 324316.63
 const coinselect = document.querySelector('.select-coin')
  const imgcurrency =  document.querySelector('.img-currency')
  const namecurrency = document.querySelector('.name-currency')
 
  
 
- console.log(namecurrency)
-
-
-const euro = 5.47
-
-
-
-
-function values() {
+  async function values() {
 
     const inputvalue = document.querySelector(".input-value").value
 
@@ -25,6 +15,13 @@ function values() {
     const valuetoconvert =  document.querySelector(".value-to-convert")
     convertedvalue.textContent =   new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(value)
     valuetoconvert.textContent =   new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(inputvalue)
+
+    const data = await fetch('https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL').then( response => response.json())
+
+   const dolarday = data.USDBRL.high
+   const euro = data.EURBRL.high
+   const btc = data.BTCBRL.high
+ 
 
     if(coinselect.value == 'dolar'){
 
